@@ -1,0 +1,5 @@
+Python 3.11.2
+PHP 8.2.18 (cli) (built: Apr 11 2024 22:07:45) (NTS)
+Copyright (c) The PHP Group
+Zend Engine v4.2.18, Copyright (c) Zend Technologies
+    with Zend OPcache v8.2.18, Copyright (c), by Zend Technologies

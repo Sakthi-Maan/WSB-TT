@@ -1,0 +1,57 @@
+login as: admin
+admin@192.168.1.12's password:
+Linux raspberrypi 6.6.31+rpt-rpi-v8 #1 SMP PREEMPT Debian 1:6.6.31-1+rpt1 (2024-                                                                                                                                                             05-29) aarch64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Oct 17 11:02:05 2024 from 192.168.1.8
+admin@raspberrypi:~ $ ls
+ApiCall.py               last_main.py   pra.py
+AudioBcd_Controller      main.py        programming_version.txt
+audio_test.py            module         push_button.py
+automation.sh            myvenv         push_setting.py
+Calendar_Project         new_main.py    sample.mp3
+calendar.zip             new_script.py  script1.py
+current_working_main.py  new_test_1.py  test1.py
+gpio_pin.py              new_test.py    test2.py
+iphone_14.mp3            pra2.py        text-to-speech.py
+admin@raspberrypi:~ $ ls
+ApiCall.py           audio_test.py  Calendar_Project  current_working_main.py  iphone_14.mp3  main.py  myvenv       new_script.py  new_test.py  pra.py                   push_button.py   sample.mp3  test1.py  text-to-speech.py
+AudioBcd_Controller  automation.sh  calendar.zip      gpio_pin.py              last_main.py   module   new_main.py  new_test_1.py  pra2.py      programming_version.txt  push_setting.py  script1.py  test2.py
+admin@raspberrypi:~ $ cat rc.local
+cat: rc.local: No such file or directory
+admin@raspberrypi:~ $ cat /etc/rc.local
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+# Print the IP address
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+
+#sudo python /home/admin/push_button.py  & sudo python /home/admin/ApiCall.py & --------
+
+#sudo python /var/www/html/calendar/backend/pyaudio2.py &
+
+#su -c '. /home/admin/myvenv/bin/activate && /home/admin/myvenv/bin/python /home/admin/pra.py &' admin
+#su -c '. /home/admin/myvenv/bin/activate && /home/admin/myvenv/bin/python /home/admin/pra2.py &' admin
+
+su -c '. /home/admin/myvenv/bin/activate && /home/admin/myvenv/bin/python  /home/admin/main.py'
+
+exit 0
+admin@raspberrypi:~ $
