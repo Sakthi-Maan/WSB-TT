@@ -17,7 +17,8 @@ FEATURES
 
 Prerequisites
 ```           
-- PHP Version 8.0.30 
+- PHP Version 8.0.30
+- Laravel > 10.0
 - Python (version 3.x recommended)
 - pip (Python package manager)
 ```
